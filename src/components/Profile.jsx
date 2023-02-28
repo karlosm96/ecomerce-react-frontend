@@ -37,7 +37,7 @@ export default function Profile(){
     
 
     useEffect(() =>{
-        axios.get(`http://localhost:5000/api/v1/auth/${idUser}`, configSimple).then(res => {
+        axios.get(`https://midulceonline-backend-service.onrender.com/api/v1/auth/${idUser}`, configSimple).then(res => {
 			setEmailUsuario(res.data['usuario']['email'])
             setNombreUsusario(res.data['usuario']['userName'])
         }).catch(err=>{console.log(err.stack)})
@@ -48,7 +48,7 @@ export default function Profile(){
     }
 
     const fetchData = useCallback(async () =>{
-        const response = await fetch(`http://localhost:5000/api/v1/clientes/findById/${idUser}`, configSimple);
+        const response = await fetch(`https://midulceonline-backend-service.onrender.com/api/v1/clientes/findById/${idUser}`, configSimple);
         const json = await response.json();
         setClienteInfo(json)
     });
@@ -96,7 +96,7 @@ export default function Profile(){
                 if (result.isConfirmed) {
         
                     //Metodo actualizar
-                    axios.put(`http://localhost:5000/api/v1/clientes/update/${idUser}`, profileData, config).catch(err => { console.log(err.stack); });
+                    axios.put(`https://midulceonline-backend-service.onrender.com/api/v1/clientes/update/${idUser}`, profileData, config).catch(err => { console.log(err.stack); });
                         swalWithBootstrapButtons.fire(
                         'Actualizado!',
                         'El perfil ha sido actualizado.',
@@ -148,8 +148,3 @@ export default function Profile(){
         </div>
     )
 }
-
-/*<div className="row mt-3">
-<div className="col-md-6"><label className="labels">Country</label><input type="text" className="form-control" placeholder="country" ></input></div>
-<div className="col-md-6"><label className="labels">State/Region</label><input type="text" className="form-control"  placeholder="state"></input></div>
-</div>*/

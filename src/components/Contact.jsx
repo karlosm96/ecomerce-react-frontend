@@ -22,7 +22,7 @@ export default function Contact(){
 
         try{
             setLoading(true);
-            const { data } = await axios.post(`http://localhost:5000/api/v1/contactUs/send`, {
+            const { data } = await axios.post(`https://midulceonline-backend-service.onrender.com/api/v1/contactUs/send`, {
                 name,
                 email,
                 subject,

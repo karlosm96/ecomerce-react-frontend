@@ -27,7 +27,7 @@ export default function Single_Product(props){
     // **************************************************************************************
 
     const fetchData = async () =>{
-        const response = await fetch(`http://localhost:5000/api/v1/productos/findById/${newId}`);
+        const response = await fetch(`https://midulceonline-backend-service.onrender.com/api/v1/productos/findById/${newId}`);
         const json = await response.json();
         setNewId(newId);
         setDataImagen(json.imagen);
@@ -75,14 +75,3 @@ export default function Single_Product(props){
         </>
     )
 }
-
-// export default connect(mapStateToProps)(Producs)
-
-/*
-const config = {
-            body: JSON.stringify(arrayProducts),
-            headers:{'Content-Type': 'application/json','x-auth-token': bearer}
-        }
-
-        axios.put(`http://localhost:5000/api/v1/detalle_facturas/update/${userID}`, arrayProducts, config).catch( err => { console.log(err.stack) });
-*/

@@ -42,10 +42,10 @@ export default function Register(){
         setRegister(false);
 
         if(password === passwordS && !register){
-            axios.post('http://localhost:5000/api/v1/usuarios', nuevoUsusario).then(res =>{
+            axios.post('https://midulceonline-backend-service.onrender.com/api/v1/usuarios', nuevoUsusario).then(res =>{
 
-                axios.post(`http://localhost:5000/api/v1/clientes/add/`, nuevoCliente).catch(err => { console.log(err.stack) });
-                axios.post('http://localhost:5000/api/v1/detalle_facturas/add', nuevoDetalleFactura).catch(err => { console.log(err.stack) });
+                axios.post(`https://midulceonline-backend-service.onrender.com/api/v1/clientes/add/`, nuevoCliente).catch(err => { console.log(err.stack) });
+                axios.post('https://midulceonline-backend-service.onrender.com/api/v1/detalle_facturas/add', nuevoDetalleFactura).catch(err => { console.log(err.stack) });
                 
                 Swal.fire({ position: 'center', icon: 'success',  title: 'El Ususario ha sido registrado con exito!', showConfirmButton: false, timer: 1500 });
                 navigate('/');

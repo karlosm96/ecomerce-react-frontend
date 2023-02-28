@@ -80,5 +80,3 @@ export default function Producto({ nombre, precio, imagen, appendDataList }){
         </>
     )
 }
-
-//const activateAppendProductList = () => quantity ? appendProductList(dataProducto, quantity) : "";

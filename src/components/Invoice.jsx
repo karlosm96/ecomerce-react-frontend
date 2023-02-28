@@ -140,7 +140,7 @@ export default function Invoice(){
 
         /* Se genera la factura PDF */
         let configSimple = auth.authUserWithData(info)
-        axios.post('http://localhost:5000/api/v1/document/pdfDocument', info, configSimple).then(res =>{
+        axios.post('https://midulceonline-backend-service.onrender.com/api/v1/document/pdfDocument', info, configSimple).then(res =>{
             
             /* Guardar en la BD el encabezado de la factura */
             let date_time = new Date();
@@ -151,7 +151,7 @@ export default function Invoice(){
                     activo: true
                 }
             configSimple = auth.authUserWithData(encabezado_facturas);
-            axios.post('http://localhost:5000/api/v1/encabezado_facturas/add', encabezado_facturas, configSimple).then(res =>{
+            axios.post('https://midulceonline-backend-service.onrender.com/api/v1/encabezado_facturas/add', encabezado_facturas, configSimple).then(res =>{
                 console.log("Todo salio bien");
             }).catch(err =>{
                 console.log(err);
@@ -163,7 +163,7 @@ export default function Invoice(){
                 productos: cartProductsArray
             }
             configSimple = auth.authUserWithData(detalle_facturas);
-            axios.post('http://localhost:5000/api/v1/detalle_facturas/add', detalle_facturas, configSimple).then(res =>{
+            axios.post('https://midulceonline-backend-service.onrender.com/api/v1/detalle_facturas/add', detalle_facturas, configSimple).then(res =>{
                 console.log("Esto esta en duda");
             }).catch(err =>{
                 console.log(err);
@@ -181,7 +181,7 @@ export default function Invoice(){
     }
 
     const downloadInvoicePdf = (docName) =>{
-        fetch(`http://localhost:5000/api/v1/document/downloadPdf/${docName}`).then(response => {
+        fetch(`https://midulceonline-backend-service.onrender.com/api/v1/document/downloadPdf/${docName}`).then(response => {
                     response.blob().then(blob => {
                         // Creating new object of PDF file
                         const fileURL = window.URL.createObjectURL(blob);
@@ -192,7 +192,7 @@ export default function Invoice(){
                         alink.click();
                     })
                 })
-                window.open(`http://localhost:5000/api/v1/document/downloadPdf/${docName}`);
+                window.open(`https://midulceonline-backend-service.onrender.com/api/v1/document/downloadPdf/${docName}`);
     }
 
     const calculateTotal = () =>{

@@ -37,7 +37,7 @@ export default function ShoppingCart({ products }){
     const chargeProducts = (array) =>{
         if(array.length > 0){
             const detailProductArray = dataListProducts.map(producto => 
-                {axios.get(`http://localhost:5000/api/v1/productos/findById/${producto.id_producto}`)
+                {axios.get(`https://midulceonline-backend-service.onrender.com/api/v1/productos/findById/${producto.id_producto}`)
                     .then( res => {
                         setDataProduct((oldArray) => [...oldArray, res.data])
                     })
@@ -136,51 +136,3 @@ export default function ShoppingCart({ products }){
         </>
     )
 }
-
-/*
-
-const [total, setTotal] = useState([]);
-    const [totalFinal, setTotalFinal] = useState([]);
-
-
-
-                    console.log(total2)
-                    console.log(totalFinal2)
-
-
- const total = dataProduct.map((producto, index) => Number(producto.precio) * Number(dataListProducts[index].cantidad));
-    const totalFinal = total.length > 0 ? total.reduce(function(acc, val) { return acc + val; }) : 0;
-
-
-
-
-
-<tr className="text-center" key={indice}>
-                                            <td className="product-remove"><a href="#"><span className="ion-ios-close"></span></a></td>
-                                            <td className="image-prod"><div className="img" ></div></td>
-                                            
-                                            <td className="product-name">
-                                                <h3>{ res.data.nombre }</h3>
-                                                <p>{ res.data.marca }</p>
-                                            </td>
-                                            
-                                            <td className="price">{ res.data.precio }</td>
-                                            
-                                            <td className="quantity">
-                                                <div className="input-group mb-3">
-                                                    <input type="text" name="quantity" className="quantity form-control input-number" value={ producto.cantidad } min="1" max="100"></input>
-                                                </div>
-                                            </td>
-                                                
-                                            <td className="total">$4.90</td>
-                                        </tr>
-
-
-
-                                        const firstArray = dataListProducts.map(producto => producto);
-    const secondArray = firstArray.map(producto => axios.get(`http://localhost:5000/api/v1/productos/findById/${producto.id_producto}`)
-    .then( res => (
-        res
-    )))
-
-*/

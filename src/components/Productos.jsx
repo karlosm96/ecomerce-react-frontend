@@ -24,7 +24,7 @@ function Productos({categoriaProductos}){
     }
 
 	useEffect(()=>{
-        axios.get(`http://localhost:5000/api/v1/productos/list`, config).then(res => {
+        axios.get(`https://midulceonline-backend-service.onrender.com/api/v1/productos/list`, config).then(res => {
 			setDataProductos(res.data)
         }).catch(err=>{console.log(err.stack)})
     },[])
