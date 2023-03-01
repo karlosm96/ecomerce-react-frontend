@@ -13,27 +13,7 @@ export default function Single_Product(props){
     const [dataImagen, setDataImagen] = useState();
     const [dataNombre, setDataNombre] = useState();
     const [dataPrecio, setDataPrecio] = useState();
-    const [dataListProducts, setDataListProducts] = useContext(AppContext);
-
-    // Peticion para autenticar
-    // **************************************************************************************
-    const token = localStorage.getItem('token');
-    let bearer;
-    if(token===''){
-        bearer="";
-    } else{
-        bearer = `${token}`;
-    }
-    // **************************************************************************************
-
-    const fetchData = async () =>{
-        const response = await fetch(`https://midulceonline-backend-service.onrender.com/api/v1/productos/findById/${newId}`);
-        const json = await response.json();
-        setNewId(newId);
-        setDataImagen(json.imagen);
-        setDataNombre(json.nombre);
-        setDataPrecio(json.precio);
-    };
+    const [dataListProducts, setDataListProducts] = useContext(AppContext);    
 
     const changeId = (id) =>{
         setNewId(id);
@@ -50,6 +30,14 @@ export default function Single_Product(props){
     }
 
     useEffect(()=>{
+        const fetchData = async () =>{
+            const response = await fetch(`https://midulceonline-backend-service.onrender.com/api/v1/productos/findById/${newId}`);
+            const json = await response.json();
+            setNewId(newId);
+            setDataImagen(json.imagen);
+            setDataNombre(json.nombre);
+            setDataPrecio(json.precio);
+        };
         fetchData();
     }, [newId])
 
