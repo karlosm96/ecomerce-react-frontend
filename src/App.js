@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import Contact from './components/Contact.jsx';
 import StaticContext from './components/ContextState/StaticContext.js';
 import Invoice from './components/Invoice.jsx';
@@ -16,7 +16,7 @@ function App() {
   return (
     <StaticContext>
       <InvoiceContext>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path='/' element={<Main></Main>} exact></Route>
             <Route path='/productos/:option' element={<Menu></Menu>} exact></Route>
@@ -28,7 +28,7 @@ function App() {
             <Route path='/shoppingCart/:id' element={<ShoppingCart></ShoppingCart>} exact></Route>
             <Route path='/checkout' element={<Invoice></Invoice>} exact></Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </InvoiceContext>
     </StaticContext>
   );
