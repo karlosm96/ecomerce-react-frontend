@@ -50,7 +50,7 @@ export default function ShoppingCart({ products }){
         let modifyQuantityArr = quantityArray.filter((element, index) => index !== numIndex); 
         setDataListProducts(modifyArr);
         setModifyProductsArray(modifyArr);
-        window.location.reload(true)
+        window.location.reload(true);
     };
 
     const createProductList = () =>{
@@ -58,7 +58,6 @@ export default function ShoppingCart({ products }){
         demoInfo.forEach((product, index)=>{
             product['cantidad'] = quantityArray[index];
         });
-
         setContextDataProduct(demoInfo);
     }
 

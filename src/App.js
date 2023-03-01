@@ -19,14 +19,14 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Main></Main>} exact></Route>
-            <Route path='/productos/:option' element={<Menu></Menu>} exact></Route>
-            <Route path='/productos/single/:id' element={<Single_Product></Single_Product>} exact></Route>
-            <Route path='/register' element={<Register></Register>} exact></Route>
-            <Route path='/login' element={<Login></Login>} exact></Route>
-            <Route path='/profile/:id' element={<Profile></Profile>} exact></Route>
-            <Route path='/contactUs' element={<Contact></Contact>} exact></Route>
-            <Route path='/shoppingCart/:id' element={<ShoppingCart></ShoppingCart>} exact></Route>
-            <Route path='/checkout' element={<Invoice></Invoice>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/productos/:option' element={<Menu></Menu>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/productos/single/:id' element={<Single_Product></Single_Product>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/register' element={<Register></Register>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/login' element={<Login></Login>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/profile/:id' element={<Profile></Profile>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/contactUs' element={<Contact></Contact>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/shoppingCart/:id' element={<ShoppingCart></ShoppingCart>} exact></Route>
+            <Route path='https://midulceonlineco.onrender.com/checkout' element={<Invoice></Invoice>} exact></Route>
           </Routes>
         </BrowserRouter>
       </InvoiceContext>
