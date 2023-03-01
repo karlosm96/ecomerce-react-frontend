@@ -14,7 +14,7 @@ import InvoiceContext from './components/ContextState/InvoiceContext.js'
 function App() {
 
   return (
-    <Router basename="/ecomerce-react-frontend">
+    
       <StaticContext>
         <InvoiceContext>
           <BrowserRouter>
@@ -32,7 +32,7 @@ function App() {
           </BrowserRouter>
         </InvoiceContext>
       </StaticContext>
-    </Router>
+    
   );
 }
 
