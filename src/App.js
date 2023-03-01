@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact.jsx';
 import StaticContext from './components/ContextState/StaticContext.js';
 import Invoice from './components/Invoice.jsx';
@@ -14,25 +14,23 @@ import InvoiceContext from './components/ContextState/InvoiceContext.js'
 function App() {
 
   return (
-    
-      <StaticContext>
-        <InvoiceContext>
-          <BrowserRouter>
-            <Routes>
-              <Route path='/' element={<Main></Main>} exact></Route>
-              <Route path='/productos/:option' element={<Menu></Menu>} exact></Route>
-              <Route path='/productos/single/:id' element={<Single_Product></Single_Product>} exact></Route>
-              <Route path='/register' element={<Register></Register>} exact></Route>
-              <Route path='/login' element={<Login></Login>} exact></Route>
-              <Route path='/profile/:id' element={<Profile></Profile>} exact></Route>
-              <Route path='/contactUs' element={<Contact></Contact>} exact></Route>
-              <Route path='/shoppingCart/:id' element={<ShoppingCart></ShoppingCart>} exact></Route>
-              <Route path='/checkout' element={<Invoice></Invoice>} exact></Route>
-            </Routes>
-          </BrowserRouter>
-        </InvoiceContext>
-      </StaticContext>
-    
+    <StaticContext>
+      <InvoiceContext>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Main></Main>} exact></Route>
+            <Route path='/productos/:option' element={<Menu></Menu>} exact></Route>
+            <Route path='/productos/single/:id' element={<Single_Product></Single_Product>} exact></Route>
+            <Route path='/register' element={<Register></Register>} exact></Route>
+            <Route path='/login' element={<Login></Login>} exact></Route>
+            <Route path='/profile/:id' element={<Profile></Profile>} exact></Route>
+            <Route path='/contactUs' element={<Contact></Contact>} exact></Route>
+            <Route path='/shoppingCart/:id' element={<ShoppingCart></ShoppingCart>} exact></Route>
+            <Route path='/checkout' element={<Invoice></Invoice>} exact></Route>
+          </Routes>
+        </BrowserRouter>
+      </InvoiceContext>
+    </StaticContext>
   );
 }
 
